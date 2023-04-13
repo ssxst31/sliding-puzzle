@@ -147,14 +147,14 @@ function App() {
           } else {
             return (
               <div
-                className="relative inline-flex items-center justify-center w-full bg-red-300 border-black rounded-md shadow-lg cursor-pointer"
+                className="relative inline-flex items-center justify-center bg-red-300 border-black rounded-md shadow-lg cursor-pointer"
                 key={el.title}
                 onClick={() => {
                   moveTile(el);
                 }}
               >
                 <img
-                  className="absolute w-3/6 rounded-lg shadow-lg h-3/6"
+                  className="absolute object-fill w-2/5 rounded-lg shadow-lg"
                   src={el.img}
                 />
                 <div className="absolute top-0 text-6xl text-white">
