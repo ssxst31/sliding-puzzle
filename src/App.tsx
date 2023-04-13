@@ -101,29 +101,36 @@ function App() {
   }, [tileList]);
 
   return (
-    <div className="grid grid-cols-4 gap-y-8 gap-x-8 ">
-      {tileList.map((el: any) => {
-        if (el.title === "0") {
-          return (
-            <div
-              className=" bg-white w-full h-full cursor-pointer"
-              key={el.title}
-            />
-          );
-        } else {
-          return (
-            <div
-              className="bg-red-300 w-full h-44 cursor-pointer border-black  rounded-md inline-flex items-center justify-center text-8xl"
-              key={el.title}
-              onClick={() => {
-                moveTile(el);
-              }}
-            >
-              {el.title}
-            </div>
-          );
-        }
-      })}
+    <div>
+      <div className="w-full bg-red-400 h-10 flex justify-center items-center">
+        <div className="text-white text-xl">
+          flex 슬라이딩 퍼즐입니다람쥐 많관부~
+        </div>
+      </div>
+      <div className="grid grid-cols-4 gap-y-8 gap-x-8 ">
+        {tileList.map((el: any) => {
+          if (el.title === "0") {
+            return (
+              <div
+                className=" bg-white w-full h-full cursor-pointer"
+                key={el.title}
+              />
+            );
+          } else {
+            return (
+              <div
+                className="bg-red-300 w-full h-44 cursor-pointer border-black  rounded-md inline-flex items-center justify-center text-8xl"
+                key={el.title}
+                onClick={() => {
+                  moveTile(el);
+                }}
+              >
+                {el.title}
+              </div>
+            );
+          }
+        })}
+      </div>
     </div>
   );
 }
