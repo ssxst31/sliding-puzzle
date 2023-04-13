@@ -63,22 +63,22 @@ function App() {
   useEffect(() => {
     setTileList(
       shuffle([
-        { title: "0", value: [1, 1], img: result[0] },
-        { title: "1", value: [1, 2], img: result[0] },
-        { title: "2", value: [1, 3], img: result[0] },
-        { title: "3", value: [1, 4], img: result[0] },
-        { title: "4", value: [2, 1], img: result[1] },
-        { title: "5", value: [2, 2], img: result[1] },
-        { title: "6", value: [2, 3], img: result[1] },
-        { title: "7", value: [2, 4], img: result[1] },
-        { title: "8", value: [3, 1], img: result[2] },
-        { title: "9", value: [3, 2], img: result[2] },
-        { title: "10", value: [3, 3], img: result[2] },
-        { title: "11", value: [3, 4], img: result[2] },
-        { title: "12", value: [4, 1], img: result[3] },
-        { title: "13", value: [4, 2], img: result[3] },
-        { title: "14", value: [4, 3], img: result[3] },
-        { title: "15", value: [4, 4], img: result[3] },
+        { title: "1", value: [1, 1], img: result[0] },
+        { title: "2", value: [1, 2], img: result[0] },
+        { title: "3", value: [1, 3], img: result[0] },
+        { title: "4", value: [1, 4], img: result[0] },
+        { title: "5", value: [2, 1], img: result[1] },
+        { title: "6", value: [2, 2], img: result[1] },
+        { title: "7", value: [2, 3], img: result[1] },
+        { title: "8", value: [2, 4], img: result[1] },
+        { title: "9", value: [3, 1], img: result[2] },
+        { title: "10", value: [3, 2], img: result[2] },
+        { title: "11", value: [3, 3], img: result[2] },
+        { title: "12", value: [3, 4], img: result[2] },
+        { title: "13", value: [4, 1], img: result[3] },
+        { title: "14", value: [4, 2], img: result[3] },
+        { title: "15", value: [4, 3], img: result[3] },
+        { title: "0", value: [4, 4], img: result[3] },
       ])
     );
   }, []);
@@ -150,7 +150,7 @@ function App() {
           } else {
             return (
               <div
-                className="relative inline-flex items-center justify-center bg-red-300 border-black rounded-md shadow-lg cursor-pointer"
+                className="relative inline-flex items-center justify-center bg-red-300 border border-black border-solid rounded-md shadow-lg cursor-pointer"
                 key={el.title}
                 onClick={() => {
                   moveTile(el);
