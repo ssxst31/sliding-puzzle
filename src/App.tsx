@@ -32,6 +32,7 @@ function App() {
     }
   }
   const [tileList, setTileList] = useState<any>([]);
+  const [count, setCount] = useState<number>(0);
 
   function isSolvable(tiles: any) {
     let inversionCount = 0;
@@ -102,6 +103,7 @@ function App() {
       .find((a: any) => a.title === "0");
 
     if (tileRange) {
+      setCount((prev) => prev + 1);
       const zeroTile = pensByColors2.find((a: any) => a.title === "0");
       const daa22 = pensByColors2.map((el: any) => {
         if (el.title === tile.title) {
@@ -124,7 +126,7 @@ function App() {
         .every((e: any, index: any) => Number(e.title) === index + 1) &&
       tileList[tileList.length - 1]?.title === "0"
     ) {
-      alert("축하드립니다람쥐.");
+      alert(`축하드립니다람쥐. ${count}만에 맞추셨네요^^`);
     }
   }, [tileList]);
 
@@ -134,6 +136,7 @@ function App() {
         <div className="text-xl text-white">
           flex 슬라이딩 퍼즐입니다람쥐 많관부~
         </div>
+        <div className="ml-5 text-xl text-black">count:{count}</div>
       </div>
       <div className="grid grid-cols-4 grid-rows-4 gap-y-8 gap-x-8 h-[calc(100vh-40px)]">
         {tileList.map((el: any) => {
