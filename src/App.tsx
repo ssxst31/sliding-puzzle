@@ -63,22 +63,22 @@ function App() {
   useEffect(() => {
     setTileList(
       shuffle([
-        { title: "1", value: [1, 1], img: result[0] },
-        { title: "2", value: [1, 2], img: result[0] },
-        { title: "3", value: [1, 3], img: result[0] },
-        { title: "0", value: [1, 4], img: result[0] },
-        { title: "5", value: [2, 1], img: result[1] },
-        { title: "6", value: [2, 2], img: result[1] },
-        { title: "4", value: [2, 3], img: result[1] },
-        { title: "8", value: [2, 4], img: result[1] },
-        { title: "9", value: [3, 1], img: result[2] },
-        { title: "10", value: [3, 2], img: result[2] },
-        { title: "12", value: [3, 3], img: result[2] },
-        { title: "7", value: [3, 4], img: result[2] },
-        { title: "13", value: [4, 1], img: result[3] },
-        { title: "15", value: [4, 2], img: result[3] },
-        { title: "11", value: [4, 3], img: result[3] },
-        { title: "14", value: [4, 4], img: result[3] },
+        { title: "0", value: [1, 1], img: result[0] },
+        { title: "1", value: [1, 2], img: result[0] },
+        { title: "2", value: [1, 3], img: result[0] },
+        { title: "3", value: [1, 4], img: result[0] },
+        { title: "4", value: [2, 1], img: result[1] },
+        { title: "5", value: [2, 2], img: result[1] },
+        { title: "6", value: [2, 3], img: result[1] },
+        { title: "7", value: [2, 4], img: result[1] },
+        { title: "8", value: [3, 1], img: result[2] },
+        { title: "9", value: [3, 2], img: result[2] },
+        { title: "10", value: [3, 3], img: result[2] },
+        { title: "11", value: [3, 4], img: result[2] },
+        { title: "12", value: [4, 1], img: result[3] },
+        { title: "13", value: [4, 2], img: result[3] },
+        { title: "14", value: [4, 3], img: result[3] },
+        { title: "15", value: [4, 4], img: result[3] },
       ])
     );
   }, []);
@@ -129,7 +129,7 @@ function App() {
       alert(`축하드립니다람쥐. ${count}만에 맞추셨네요^^`);
     }
   }, [tileList]);
-
+  console.log(tileList);
   return (
     <div>
       <div className="flex items-center justify-center w-full h-10 bg-red-400">
