@@ -5,12 +5,30 @@ import "./index.css";
 function App() {
   const [tileList, setTileList] = useState<any>([]);
 
-  function shuffle(array: any) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [array[i].value, array[j].value] = [array[j].value, array[i].value];
+  function isSolvable(tiles: any) {
+    let inversionCount = 0;
+    for (let i = 0; i < tiles.length; i++) {
+      for (let j = i + 1; j < tiles.length; j++) {
+        if (
+          tiles[i].title !== "0" &&
+          tiles[j].title !== "0" &&
+          tiles[i].value[0] > tiles[j].value[0]
+        ) {
+          inversionCount++;
+        }
+      }
     }
-    return array;
+    return inversionCount % 2 === 0;
+  }
+
+  function shuffle(tiles: any) {
+    do {
+      for (let i = tiles.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [tiles[i].value, tiles[j].value] = [tiles[j].value, tiles[i].value];
+      }
+    } while (!isSolvable(tiles));
+    return tiles;
   }
 
   useEffect(() => {
